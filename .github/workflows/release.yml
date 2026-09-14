@@ -14,3 +14,6 @@ jobs:
       - uses: astral-sh/setup-uv@v5
       - run: uv build
       - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          # A re-pushed tag should not turn the run red over an upload PyPI already has.
+          skip-existing: true
