@@ -1,0 +1,32 @@
+[project]
+name = "pdfreplace"
+version = "0.1.0"
+description = "Replace a string inside a PDF without re-typesetting the document"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "Finn Rogosch" }]
+keywords = ["pdf", "text", "replace", "edit", "pikepdf", "qpdf"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Programming Language :: Python :: 3",
+    "Topic :: Text Processing",
+    "Topic :: Utilities",
+]
+dependencies = ["pikepdf>=8"]
+
+[project.urls]
+Homepage = "https://github.com/finnrogosch/pdfreplace"
+Issues = "https://github.com/finnrogosch/pdfreplace/issues"
+
+[project.scripts]
+pdfreplace = "pdfreplace:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+only-include = ["pdfreplace.py"]
+sources = ["."]
